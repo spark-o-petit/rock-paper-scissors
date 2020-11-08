@@ -1,5 +1,3 @@
-let computerSelection = computerPlay();
-
 function computerPlay () {
    let computerChoice = Math.floor( Math.random()*3);
    return computerChoice;
@@ -21,3 +19,18 @@ function playRound (playerSelection, computerSelection) {
             break;
     }
 }
+
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    playRound(0,computerPlay());
+});
+
+const paper = document.querySelector('#paper');
+rock.addEventListener('click', () => {
+    playRound(1,computerPlay());
+});
+
+const scissor = document.querySelector('#scissor');
+rock.addEventListener('click', () => {
+    playRound(2,computerPlay());
+});
