@@ -20,17 +20,9 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-const rock = document.querySelector('#rock');
-rock.addEventListener('click', () => {
-    playRound(0,computerPlay());
-});
-
-const paper = document.querySelector('#paper');
-rock.addEventListener('click', () => {
-    playRound(1,computerPlay());
-});
-
-const scissor = document.querySelector('#scissor');
-rock.addEventListener('click', () => {
-    playRound(2,computerPlay());
-});
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playRound(button.id,computerPlay());
+    })
+})
